@@ -1,0 +1,14 @@
+
+[general]
+live_config_reload = true 
+import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 0.9
+
+[window.padding]
+x = 5
+y = 5
+
