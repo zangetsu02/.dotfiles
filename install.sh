@@ -63,6 +63,12 @@ if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
   fi
 fi
 
+# Fonts (Serve un NerdFont ad eza per far vedere le icone)
+cd /usr/local/share/fonts
+sudo cp fonts/Hack/*.ttf /usr/local/share/fonts
+sudo fc-cache -fv
+
+
 source ~/.bashrc
 
 echo "Installazione completata."

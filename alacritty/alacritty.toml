@@ -12,3 +12,5 @@ opacity = 0.9
 x = 5
 y = 5
 
+[font.normal]
+family = "Hack Nerd Font"
