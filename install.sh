@@ -2,8 +2,8 @@
 
 # Installazione di Fish
 sudo apt-get install fish
-read -p "Vuoi impostare Fish come shell predefinita? (s/n): " risposta
-if [[ "$risposta" == "s" || "$risposta" == "S" ]]; then
+read -p "Vuoi impostare Fish come shell predefinita? (y/n): " risposta
+if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
   sudo chsh -s $(which fish)
 fi
 
@@ -35,6 +35,18 @@ if [ -d alacritty ]; then
   cp -r alacritty ~/.config/
 else
   echo "Directory alacritty non trovata"
+fi
+
+
+read -p "Vuoi installare fnm (Fast Node Manage)? (y/n): " risposta
+if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
+  curl -fsSL https://fnm.vercel.app/install | bash
+
+  read -p "Vuoi installare l ultima versione lts di node? (y/n): " risposta
+  if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
+    fnm install
+    fnm use
+  fi
 fi
 
 echo "Installazione completata."
