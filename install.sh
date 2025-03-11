@@ -8,6 +8,8 @@ sudo apt-get install fish
 read -p "Vuoi impostare Fish come shell predefinita? (y/n): " risposta
 if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
   sudo chsh -s $(which fish)
+  echo 'fish' >> ~/.bashrc
+
 fi
 
 # Dipendenze per Alacritty
@@ -61,6 +63,6 @@ if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
   fi
 fi
 
-
+source ~/.bashrc
 
 echo "Installazione completata."
