@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+sudo apt update
+
 # Installazione di Fish
 sudo apt-get install fish
 read -p "Vuoi impostare Fish come shell predefinita? (y/n): " risposta
@@ -23,6 +26,15 @@ if ! command -v snap &> /dev/null; then
 else
   sudo snap install alacritty --classic
 fi
+
+# Installazione di Eza 
+sudo apt install -y gpg
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install -y eza
 
 # Copia delle configurazioni
 if [ -d fish ]; then
@@ -48,5 +60,7 @@ if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
     fnm use
   fi
 fi
+
+
 
 echo "Installazione completata."

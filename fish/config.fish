@@ -4,8 +4,11 @@ end
 
 set fish_greeting
 
-function fish_prompt
-    set_color a6adc8
-    echo (pwd) (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')
-    echo "\$ "
-end
+
+## Useful aliases
+
+# Replace ls with eza
+alias ls 'eza -l --color=always --group-directories-first --icons'  # preferred listing
+alias la 'eza -a --color=always --group-directories-first --icons'  # all files and dirs
+alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
+alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
