@@ -58,7 +58,7 @@ if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
 
   read -p "Vuoi installare l ultima versione lts di node? (y/n): " risposta
   if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
-    fnm install
+    fnm install --lts
     fnm use
   fi
 fi
@@ -66,9 +66,8 @@ fi
 # Fonts (Serve un NerdFont ad eza per far vedere le icone)
 cd /usr/local/share/fonts
 sudo cp fonts/Hack/*.ttf /usr/local/share/fonts
+sudo cp fonts/Input-Font/*.ttf /usr/local/share/fonts
 sudo fc-cache -fv
-
-
 source ~/.bashrc
 
 echo "Installazione completata."
