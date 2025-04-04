@@ -13,7 +13,7 @@ if [[ "$risposta" == "y" || "$risposta" == "Y" ]]; then
 fi
 
 # Dipendenze per Alacritty
-sudo apt install cmake g++ pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt install curl cmake g++ pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 
 # Installazione di Rust
 if ! command -v rustup &> /dev/null; then
